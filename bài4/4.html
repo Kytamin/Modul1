@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b</title>
+</head>
+<body>
+<canvas id="circle" width="500" height="500" style=" border: solid black" ></canvas>
+
+</body>
+</html>
+<script>
+     class Circle{
+
+         constructor(x,y,radius) {
+             this.x=x
+             this.y=y
+             this.radius=radius
+         }
+         randomColor(){
+             let red=Math.random()*255
+             let green=Math.random()*255
+             let blue=Math.random()*255
+             return `rgb(${red},${green},${blue})`
+         }
+         draw(){
+             let canvas=document.getElementById("circle")
+             let ctx=canvas.getContext("2d")
+             ctx.beginPath()
+             ctx.arc(this.x,this.y,this.radius,0,2*Math.PI)
+             ctx.fillStyle=this.randomColor()
+             ctx.fill()
+             ctx.closePath()
+         }
+     }
+     let Circle1 =new Circle(100,100,50)
+           Circle1.draw()
+</script>
